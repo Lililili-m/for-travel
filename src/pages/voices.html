@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>读者心声 - 人在旅途</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background: linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .back-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: rgba(255,255,255,0.9);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            color: #666;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background: rgba(255,255,255,1);
+            transform: translateY(-2px);
+        }
+
+        .title {
+            font-size: 2.2rem;
+            color: #333;
+            margin-bottom: 0.5rem;
+            font-weight: 400;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 1rem;
+        }
+
+        .content-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255,255,255,0.9);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .voices-section {
+            margin-bottom: 2rem;
+        }
+
+        .voice-item {
+            background: rgba(255,255,255,0.8);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 4px solid #66a6ff;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .voice-author {
+            font-weight: 600;
+            color: #66a6ff;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
+
+        .voice-content {
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .voice-date {
+            font-size: 0.8rem;
+            color: #999;
+            margin-top: 10px;
+        }
+
+        .share-section {
+            background: linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%);
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .share-title {
+            color: white;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+
+        .share-desc {
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .share-btn {
+            background: white;
+            color: #66a6ff;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .share-btn:hover {
+            background: #f0f0f0;
+            transform: translateY(-2px);
+        }
+
+        .navigation {
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .nav-btn {
+            background: #66a6ff;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1rem;
+            text-decoration: none;
+            display: inline-block;
+            margin: 0 10px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-btn:hover {
+            background: #5a9bff;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 480px) {
+            .title {
+                font-size: 1.8rem;
+            }
+            
+            .content-container {
+                padding: 20px;
+            }
+            
+            .voice-item {
+                padding: 15px;
+            }
+            
+            .nav-btn {
+                display: block;
+                margin: 10px auto;
+                width: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="catalog.html" class="back-btn">← 返回目录</a>
+    
+    <div class="header">
+        <h1 class="title">读者心声</h1>
+        <p class="subtitle">分享与交流的温暖空间</p>
+    </div>
+
+    <div class="content-container">
+        <div class="voices-section">
+            <div class="voice-item">
+                <div class="voice-author">@小雨</div>
+                <div class="voice-content">"读完《风华正茂》这一章，我仿佛回到了自己的青春岁月。那些曾经的梦想和激情，现在想起来依然让人热血沸腾。感谢作者用如此温暖的文字，让我们重新审视自己的青春。"</div>
+                <div class="voice-date">2024年10月3日</div>
+            </div>
+
+            <div class="voice-item">
+                <div class="voice-author">@清风明月</div>
+                <div class="voice-content">"《悠然岁月》让我学会了慢下来，学会欣赏生活中的美好。在这个快节奏的时代，我们总是匆匆忙忙，却忘记了停下来看看身边的风景。谢谢作者的提醒。"</div>
+                <div class="voice-date">2024年10月2日</div>
+            </div>
+
+            <div class="voice-item">
+                <div class="voice-author">@阳光正好</div>
+                <div class="voice-content">"人生感悟这一章真的很有深度，每一句话都让我深思。特别是关于选择的力量那一段，让我明白了原来我们的人生是由无数个选择组成的，每一个选择都很重要。"</div>
+                <div class="voice-date">2024年10月1日</div>
+            </div>
+
+            <div class="voice-item">
+                <div class="voice-author">@梦想家</div>
+                <div class="voice-content">"作为一个刚步入社会的年轻人，这本书给了我很多启发。它让我明白，人生不是一场竞赛，而是一场旅行。重要的是享受过程，而不是只关注结果。"</div>
+                <div class="voice-date">2024年9月30日</div>
+            </div>
+
+            <div class="voice-item">
+                <div class="voice-author">@岁月如歌</div>
+                <div class="voice-content">"读这本书的时候，我正好经历了一些人生的低谷。是这些温暖的文字给了我力量，让我重新找到了前进的方向。感谢作者，也感谢所有分享心得的读者朋友们。"</div>
+                <div class="voice-date">2024年9月29日</div>
+            </div>
+        </div>
+
+        <div class="share-section">
+            <h3 class="share-title">分享您的感悟</h3>
+            <p class="share-desc">每一段旅程都有独特的意义，每一次阅读都有不同的感悟。我们期待听到您的声音，分享您在人生旅途中的所思所感。</p>
+            <button class="share-btn" onclick="alert('感谢您的参与！您的分享对我们很重要。')">分享我的感悟</button>
+        </div>
+        
+        <div class="navigation">
+            <a href="catalog.html" class="nav-btn">返回目录</a>
+            <a href="youth.html" class="nav-btn">重新开始阅读</a>
+        </div>
+    </div>
+</body>
+</html>
