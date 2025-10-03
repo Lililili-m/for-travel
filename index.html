@@ -29,7 +29,7 @@
         }
 
         .title {
-            font-size: 3rem;
+            font-size: 3.5rem;
             font-weight: 300;
             margin-bottom: 2rem;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
@@ -37,8 +37,15 @@
         }
 
         .subtitle {
-            font-size: 1.2rem;
+            font-size: 1.5rem;
             margin-bottom: 3rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        .subtitle-small {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
             opacity: 0.9;
             font-weight: 300;
         }
@@ -47,8 +54,8 @@
             background: rgba(255,255,255,0.2);
             border: 2px solid rgba(255,255,255,0.3);
             color: white;
-            padding: 15px 40px;
-            font-size: 1.1rem;
+            padding: 18px 45px;
+            font-size: 1.3rem;
             border-radius: 50px;
             cursor: pointer;
             transition: all 0.3s ease;
@@ -91,16 +98,16 @@
 
         @media (max-width: 480px) {
             .title {
-                font-size: 2.5rem;
+                font-size: 3rem;
             }
             
             .subtitle {
-                font-size: 1rem;
+                font-size: 1.3rem;
             }
             
             .start-btn {
-                padding: 12px 30px;
-                font-size: 1rem;
+                padding: 15px 35px;
+                font-size: 1.2rem;
             }
         }
     </style>
@@ -112,6 +119,8 @@
     <div class="cover-container">
         <h1 class="title">人在旅途</h1>
         <p class="subtitle">一段关于成长与感悟的旅程</p>
+        <p class="subtitle-small">李国华 著</p>
+        <p class="subtitle-small">2025年10月</p>
         <a href="src/pages/catalog.html" class="start-btn">开始阅读</a>
     </div>
 </body>
