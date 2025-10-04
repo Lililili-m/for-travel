@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>悠然岁月 - 人在旅途</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background: linear-gradient(135deg, #E49F9C 0%, #FAECEB 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        .header {
+            text-align: center;
+        }
+
+        .back-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: rgba(255,255,255,0.8);
+            border: none;
+            padding: 12px;
+            margin: 0;
+            border-radius: 25px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            z-index: 1000;
+        }
+
+        .back-icon {
+            width: 24px;
+            height: 24px;
+            stroke: #666;
+            transition: all 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background: rgba(255,255,255,1);
+            transform: translateY(-2px);
+        }
+
+        .back-btn:hover .back-icon {
+            stroke: #333;
+            transform: translateX(-2px);
+        }
+
+        .title {
+            font-size: 2.8rem;
+            color: #FAECEB;
+            margin-bottom: 0.5rem;
+            font-weight: 400;
+        }
+
+        .subtitle {
+            color: #FAECEB;
+            font-size: 1.3rem;
+        }
+
+        .chapters-container {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .navigation {
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .nav-btn {
+            background: #E49F9C;
+            color: white;
+            border: none;
+            padding: 15px 35px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            text-decoration: none;
+            display: inline-block;
+            margin: 0 10px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-btn:hover {
+            background: #D48F8C;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 480px) {
+            .title {
+                font-size: 2.5rem;
+            }
+            
+            .nav-btn {
+                display: block;
+                margin: 10px auto;
+                width: 220px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="../catalog.html" class="back-btn">
+        <img src="../../assets/ic_arrow_left_bt.svg" alt="返回" class="back-icon">
+    </a>
+
+    <div class="header">
+        <h1 class="title">悠然岁月</h1>
+        <p class="subtitle">山水友情间</p>
+    </div>
+
+    <div class="chapters-container">
+        <chapter-preview 
+            title="候鸟式的生活" 
+            preview="六十岁，人生的列车驶入了一个新的站台。褪去了职场的喧嚣，告别了生活的重担，经历的风雨和阳光化作了生命的厚重。终于可以卸下所有的包袱，去追寻心中的诗和远方。站在六十岁这个节点上，我筹划着开启人生旅行的新篇章。不再是为了追求什么，而是为了感受、沉淀，与这个世界更深入地对话，过一种候鸟式的生活，让脚步慢下来，用心去体会每一寸风景，每一段故事。"
+            href="houniao.html"
+            color="#E49F9C">
+        </chapter-preview>
+        
+        <chapter-preview 
+            title="三亚观音圣像与凤凰机场的奇妙缘分" 
+            preview="在前往三亚南山寺的路上，导游提到一个有趣的传说：每当飞机降落凤凰机场时，都会绕着南海观音像飞一圈。据说，这是为了祈求飞行平安，表达对观音圣像的敬意。这一说法让我心生好奇，难道飞机也会"迷信"？带着疑问，我踏上了游览观音圣像的旅程。"
+            href="sanya.html"
+            color="#E49F9C">
+        </chapter-preview>
+        
+        <chapter-preview 
+            title="同学聚会，梦回青春" 
+            preview="2016年，我在耒阳母校参加高中同学毕业四十周年聚会。这是一次时光的盛会；一次心灵的归航；一次青春的回望。同学们坐在当年的座位上，欢聚一堂。拥抱，握手，互相交流，有些同学甚至激动的说不出话来，只是紧紧的握住对方的手，眼中泛着泪光。"
+            href="tongxue.html"
+            color="#E49F9C">
+        </chapter-preview>
+        
+        <chapter-preview 
+            title="那一跳，惊艳了时光" 
+            preview="在瑞士阿尔卑斯山的滑雪场上，我见证了人生中最震撼的一跳。那是一个阳光明媚的午后，蓝天白云下，一位年轻的滑雪者从高高的跳台上腾空而起，在空中划出一道完美的弧线，然后稳稳地落在雪地上。那一刻，时间仿佛静止了，所有人都屏住了呼吸。"
+            href="tiaoyue.html"
+            color="#E49F9C">
+        </chapter-preview>
+        
+        <chapter-preview 
+            title="登阿尔卑斯山" 
+            preview="阿尔卑斯山，这座横跨欧洲的雄伟山脉，一直是我心中的梦想。终于，在这个阳光明媚的早晨，我踏上了攀登阿尔卑斯山的征程。山脚下，绿草如茵，野花遍地，空气中弥漫着清新的草香。随着海拔的升高，植被逐渐稀疏，取而代之的是裸露的岩石和终年不化的积雪。"
+            href="aerbisi.html"
+            color="#E49F9C">
+        </chapter-preview>
+        
+        <chapter-preview 
+            title="漫游日内瓦" 
+            preview="日内瓦，这座位于瑞士西南部的美丽城市，以其秀丽的湖光山色和深厚的文化底蕴而闻名于世。漫步在日内瓦湖畔，清澈的湖水倒映着蓝天白云，远处的雪山在阳光下闪闪发光。湖心的大喷泉直冲云霄，在阳光下形成一道美丽的彩虹。"
+            href="rineiwa.html"
+            color="#E49F9C">
+        </chapter-preview>
+        
+        <chapter-preview 
+            title="梵蒂冈 & 斗兽场" 
+            preview="罗马，这座永恒之城，承载着古罗马帝国的辉煌历史。漫步在罗马的街头，仿佛穿越了时空，回到了那个辉煌的年代。梵蒂冈城国，这个世界上最小的国家，却拥有着世界上最伟大的艺术珍品。圣彼得大教堂的穹顶高耸入云，米开朗基罗的《创世纪》壁画令人叹为观止。"
+            href="fandigang.html"
+            color="#E49F9C">
+        </chapter-preview>
+        
+        <chapter-preview 
+            title="走进古北水镇" 
+            preview="古北水镇，这座位于北京密云的古色古香的小镇，以其独特的江南水乡风情而闻名。漫步在青石板路上，两旁是古色古香的建筑，小桥流水，亭台楼阁，仿佛置身于江南水乡。镇上的每一处景致都经过精心设计，既保留了传统建筑的韵味，又融入了现代元素。"
+            href="gubei.html"
+            color="#E49F9C">
+        </chapter-preview>
+        
+        <chapter-preview 
+            title="北京故事：乡音牵线，乡情暖心" 
+            preview="在赞美四湖哥和云英姐的同时，我们已踏上回乡的归途。一路上，脑海里不断浮现出与大哥大姐在北京相遇的故事。那是一个阳春三月的午后，朝阳大悦城熙熙攘攘的人群中，忽然飘来一声清脆而纯正的耒阳乡音，这声音像春笋顶破冻土般突兀，却又仿佛注定般熟悉。"
+            href="beijing.html"
+            color="#E49F9C">
+        </chapter-preview>
+        
+        <chapter-preview 
+            title="南来北聚，乡情永驻" 
+            preview="在北京的日子里，我们这些来自南方的老乡们经常聚在一起，分享彼此的故事和经历。大家虽然来自不同的地方，但都有着共同的乡音和乡情。每次聚会，我们都会用家乡话交流，那种亲切感让人仿佛回到了故乡。"
+            href="nanlai.html"
+            color="#E49F9C">
+        </chapter-preview>
+        
+        <chapter-preview 
+            title="北京四合院：喧嚣背后的宁静" 
+            preview="在北京的胡同深处，隐藏着许多传统的四合院。这些古老的建筑承载着北京的历史和文化，是这座城市最珍贵的文化遗产。走进四合院，仿佛穿越了时空，回到了那个宁静的年代。院中的古树参天，花木扶疏，营造出一种宁静祥和的氛围。"
+            href="siheyuan.html"
+            color="#E49F9C">
+        </chapter-preview>
+        
+        <chapter-preview 
+            title="大三巴牌坊前的沉思" 
+            preview="澳门，这座中西文化交融的城市，以其独特的魅力吸引着世界各地的游客。漫步在澳门的街头，可以看到中式的庙宇和西式的教堂和谐共存，中式的茶楼和西式的咖啡馆相映成趣。大三巴牌坊，这座澳门的地标建筑，见证了这座城市的历史变迁。"
+            href="aomen.html"
+            color="#E49F9C">
+        </chapter-preview>
+        
+        <chapter-preview 
+            title="回家的路有多远" 
+            preview="每次旅行结束，踏上回家的路，心中总是充满了复杂的情绪。既有对旅途的不舍，也有对家的思念。回家的路，不仅是地理上的距离，更是心灵上的归程。在旅途中，我们看到了不同的风景，体验了不同的文化，但最终还是要回到那个熟悉的地方。"
+            href="huijia.html"
+            color="#E49F9C">
+        </chapter-preview>
+        
+        <chapter-preview 
+            title="南岳衡山看日出" 
+            preview="南岳衡山在我的家乡。它是中国五岳之一，以其秀丽的自然风光和深厚的文化底蕴闻名于世，祝融峰，南岳大庙，藏经殿，水帘洞等景点最热门。登上祝融峰，仿佛置身于仙境之中，俯瞰群山，倍感心胸开阔，所有的烦恼都会抛诸脑后。特别是住在山巅看日出，更是叹为观止。"
+            href="hengyue.html"
+            color="#E49F9C">
+        </chapter-preview>
+        
+        <chapter-preview 
+            title="黄龙洞游记" 
+            preview="黄龙洞，这座位于张家界的天然溶洞，以其奇特的钟乳石景观而闻名。走进洞中，仿佛进入了一个神秘的地下世界。各种形状的钟乳石在灯光的照射下，呈现出五彩斑斓的色彩，令人叹为观止。洞中的石笋、石柱、石幔等景观，都是大自然鬼斧神工的杰作。"
+            href="huanglong.html"
+            color="#E49F9C">
+        </chapter-preview>
+        
+        <chapter-preview 
+            title="畅游颐和园" 
+            preview="我们已是第三次走进这座承载着历史与文化的皇家园林。穿过东门，映入眼帘的是昆明湖的碧波荡漾。湖面如镜，倒影着蓝天白云，偶尔有几只水鸟掠过，激起一圈圈涟漪。远处的万寿山在晨雾中若隐若现，仿佛一幅水墨画，静谧而悠远。"
+            href="yiheyuan.html"
+            color="#E49F9C">
+        </chapter-preview>
+        
+        <chapter-preview 
+            title="北大情缘" 
+            preview="北京大学，这座中国最著名的高等学府，承载着无数人的梦想和希望。漫步在北大校园里，可以看到古典的建筑和现代的教学楼和谐共存，古老的银杏树和年轻的学子相映成趣。未名湖畔，博雅塔下，每一处景致都散发着浓厚的学术氛围。"
+            href="beida.html"
+            color="#E49F9C">
+        </chapter-preview>
+        
+        <chapter-preview 
+            title="音乐的力量" 
+            preview="音乐，这种人类最古老的艺术形式，有着神奇的力量。它可以抚慰心灵，激发情感，传递思想，连接人心。在旅途中，音乐成为了我最好的伙伴。无论是古典音乐的优雅，还是民族音乐的质朴，都能让我在异国他乡找到心灵的慰藉。"
+            href="yinyue.html"
+            color="#E49F9C">
+        </chapter-preview>
+        
+        <chapter-preview 
+            title="登慕田峪长城" 
+            preview="慕田峪长城，这段保存最完好的明长城，以其雄伟的气势和秀美的风光而闻名。登上长城，俯瞰群山，心中涌起无限的豪情。长城的每一块砖石都承载着历史的重量，每一段城墙都诉说着古人的智慧。站在长城上，仿佛能听到历史的回声，感受到中华民族的伟大。"
+            href="mutianyu.html"
+            color="#E49F9C">
+        </chapter-preview>
+        
+        <chapter-preview 
+            title="长城脚下的度假屋" 
+            preview="在慕田峪长城脚下，有一处宁静的度假屋。这里远离城市的喧嚣，环境清幽，是放松身心的好地方。度假屋的设计融合了传统和现代元素，既保持了古朴的风格，又提供了现代化的设施。在这里，可以静静地欣赏长城的雄伟，感受历史的厚重。"
+            href="dujiawu.html"
+            color="#E49F9C">
+        </chapter-preview>
+        
+        <chapter-preview 
+            title="从罗湖口岸入境香港所经历的事" 
+            preview="从深圳罗湖口岸入境香港，这是一次难忘的经历。口岸的人流如织，各种语言交织在一起，体现了香港作为国际大都市的包容性。过关的过程虽然繁琐，但工作人员的专业和耐心让人印象深刻。进入香港后，立刻感受到了这座城市的活力和魅力。"
+            href="xianggang.html"
+            color="#E49F9C">
+        </chapter-preview>
+        
+        <chapter-preview 
+            title="亚龙湾听海" 
+            preview="2015年海南游，我们下榻在亚龙湾喜来登大酒店。酒店有一片专属海域直通大海。海岸上的沙滩细软如绸，赤足踩上去，温热的感触从脚底蔓延开来。沙滩上零星散布着几座稻草小屋，茅草顶在海风中轻轻摇曳，投下斑驳的影子。"
+            href="yalongwan.html"
+            color="#E49F9C">
+        </chapter-preview>
+    </div>
+
+    <div class="navigation">
+        <a href="catalog.html" class="nav-btn">返回目录</a>
+        <a href="insights.html" class="nav-btn">下一章：人生感悟</a>
+    </div>
+
+    <script src="../../components/chapter-preview.js"></script>
+</body>
+</html>

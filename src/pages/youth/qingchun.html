@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>青春的遇见 - 风华正茂</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background: linear-gradient(135deg, #DF8C88 0%, #FAECEB 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        .back-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: rgba(255,255,255,0.8);
+            border: none;
+            padding: 12px;
+            margin: 0;
+            border-radius: 25px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            z-index: 1000;
+        }
+
+        .back-icon {
+            width: 24px;
+            height: 24px;
+            stroke: #666;
+            transition: all 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background: rgba(255,255,255,1);
+            transform: translateY(-2px);
+        }
+
+        .back-btn:hover .back-icon {
+            stroke: #333;
+            transform: translateX(-2px);
+        }
+
+        .content-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255,255,255,0.9);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            margin-top: 4rem;
+        }
+
+        .article {
+            line-height: 1.8;
+            font-size: 1.3rem;
+        }
+
+        .article p {
+            margin-bottom: 1.5rem;
+            text-indent: 2em;
+        }
+
+        .article h2 {
+            color: #DF8C88;
+            margin: 0 0 2rem 0;
+            font-size: 2.2rem;
+            text-align: center;
+            border-bottom: 2px solid #DF8C88;
+            padding-bottom: 10px;
+        }
+
+        .navigation {
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .nav-btn {
+            background: #DF8C88;
+            color: white;
+            border: none;
+            padding: 15px 35px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            text-decoration: none;
+            display: inline-block;
+            margin: 0 10px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-btn:hover {
+            background: #C77A76;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 480px) {
+            .content-container {
+                padding: 30px;
+            }
+            
+            .article {
+                font-size: 1.2rem;
+            }
+            
+            .nav-btn {
+                display: block;
+                margin: 10px auto;
+                width: 220px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="youth.html" class="back-btn">
+        <img src="../../assets/ic_arrow_left_bt.svg" alt="返回" class="back-icon">
+    </a>
+
+    <div class="content-container">
+        <div class="article">
+            <h2>青春的遇见</h2>
+            <p>回忆起当年的高考，我的同桌是一位女生。由于考场地面凹凸不平，我们共坐的一条长凳子有一个脚是悬空的，彼此只能用心灵感应来调整坐姿。考试进行得很顺利，但在最后一天考政治时，我感觉到她渴望的目光越过"三八线"，似乎在寻求帮助。她示意我"三热爱"如何作答。当时，我内心十分矛盾：一方面，帮助她违反考场纪律是不可取的；另一方面，我又无法抗拒那双求助的目光。最终，我在交卷时，将草稿纸"遗忘"在了那个醒目的地方。</p>
+            
+            <p>高考发榜时，我们双双收到了录取通知书。那一刻，我们击掌庆贺，她显得特别激动，眼中闪烁着感激的泪光。她告诉我，她叫李桂花，是来自长沙的下放知青，能考上大学继续学习，终于可以实现自己儿时喜欢绘画的梦想。这一次，我才正面看清她那张清纯娇美的面容。她如愿以偿地被湘潭建筑工程学校录取，而我则被省农机校录取。</p>
+            
+            <p>之后的日子里，我们书信频传，或交流学习心得，或畅想美好未来。1978年国庆节，我校组织学生们去长沙市游玩。出发前，我收到校广播室传来的消息，说有一个女生背着一个黄色书包站在袁家岭百货大楼门口等我。我猜到是她，只是没想到时间如此合拍。我们如约相见时，她像尽地主之谊，嘘寒问暖，关心起我的生活日常，还送给我一支钢笔。我们一起游览了长沙烈士陵园，随后她突然说，她妈妈要见我，并且已在家备好了午餐。我只能被动地随她而行。在她家的时光里，我仿佛享受到了"上门女婿"般的待遇，主人的热情让我受宠若惊。</p>
+            
+            <p>回到学校后，我思索良久。作为一个从农村来的孩子，能在大城市里得到女同学的青睐，已经是莫大的幸运，我不敢再有非分之想。于是，我在信函中委婉地表达了自己的想法，希望我们保持纯同学间的友谊。她起初感到突然，但经过多次友好的沟通，她最终接受了我的想法。</p>
+            
+            <p>毕业后，我们被分配到不同的城市工作，但一直保持着友好的联系。几年后，我们各自结婚生子，开始了新的生活。2004年，我的儿子和她的女儿都考取了北京大学。那一刻，我感到无比的欣慰，仿佛我们的奋斗和努力在下一代身上得到了延续。</p>
+            
+            <p>岁月悠悠，那段青春的遇见始终珍藏在我的记忆深处。它不仅是我的个人回忆，也是那个时代的缩影。在那个特殊的年代里，无数人通过奋斗改变了命运，而我们也在这段旅程中收获了珍贵的友情与成长。这段回忆让我明白，无论时代如何变迁，奋斗、友情和对美好生活的追求，始终是人生中最宝贵的财富。</p>
+        </div>
+    </div>
+
+    <div class="navigation">
+        <a href="youth.html" class="nav-btn">返回风华正茂</a>
+        <a href="cunshan.html" class="nav-btn">上一篇：我从山村来</a>
+        <a href="zhichang.html" class="nav-btn">下一篇：职场足迹</a>
+    </div>
+</body>
+</html>

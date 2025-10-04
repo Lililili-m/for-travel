@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>前言 - 人在旅途</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background: linear-gradient(135deg, #D97974 0%, #FAECEB 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        .header {
+            text-align: center;
+        }
+
+        .back-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: rgba(255,255,255,0.8);
+            border: none;
+            padding: 12px;
+            margin: 0;
+            border-radius: 25px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            z-index: 1000;
+        }
+
+        .back-icon {
+            width: 24px;
+            height: 24px;
+            stroke: #666;
+            transition: all 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background: rgba(255,255,255,1);
+            transform: translateY(-2px);
+        }
+
+        .back-btn:hover .back-icon {
+            stroke: #333;
+            transform: translateX(-2px);
+        }
+
+        .title {
+            font-size: 2.8rem;
+            color: #FAECEB;
+            margin-bottom: 0.5rem;
+            font-weight: 400;
+        }
+
+        .subtitle {
+            color: #FAECEB;
+            font-size: 1.3rem;
+        }
+
+        .content-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255,255,255,0.9);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            margin-top: 4rem;
+        }
+
+        .article {
+            line-height: 1.8;
+            font-size: 1.3rem;
+        }
+
+        .article p {
+            margin-bottom: 1.5rem;
+            text-indent: 2em;
+        }
+
+        .article h2 {
+            color: #D97974;
+            margin: 0 0 2rem 0;
+            font-size: 2.2rem;
+            text-align: center;
+            border-bottom: 2px solid #D97974;
+            padding-bottom: 10px;
+        }
+
+        .article h3 {
+            color: #666;
+            margin: 2rem 0 1rem 0;
+            font-size: 1.5rem;
+            text-align: right;
+            font-style: italic;
+        }
+
+        .quote {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 2rem 0;
+            font-style: italic;
+            text-align: center;
+            font-size: 1.4rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .navigation {
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .nav-btn {
+            background: #D97974;
+            color: white;
+            border: none;
+            padding: 15px 35px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            text-decoration: none;
+            display: inline-block;
+            margin: 0 10px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-btn:hover {
+            background: #C66B66;
+            transform: translateY(-2px);
+        }
+
+        .author-signature {
+            text-align: right;
+            margin-top: 2rem;
+            font-size: 1.3rem;
+            color: #666;
+            font-weight: 500;
+        }
+
+        @media (max-width: 480px) {
+            .title {
+                font-size: 2.5rem;
+            }
+            
+            .content-container {
+                padding: 30px;
+            }
+            
+            .article {
+                font-size: 1.2rem;
+            }
+            
+            .nav-btn {
+                display: block;
+                margin: 10px auto;
+                width: 220px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="preface.html" class="back-btn">
+        <img src="../../assets/ic_arrow_left_bt.svg" alt="返回" class="back-icon">
+    </a>
+
+
+    <div class="content-container">
+        <div class="article">
+            <h2>前言</h2>
+            
+            <p>人生就是一场漫长的旅行，充满了未知与挑战，但也充满了美好与希望。在这场旅行中，我们背上行囊，踏上未知的路途，探索山川湖海，感受风土人情；我们不断遇见新的风景，也在旅途中遇见自己。</p>
+            
+            <p>旅行中，我们会遇到许多人，有些人成为了朋友，伴侣，家人，陪伴我们走过一段或几段路程，我们也会在沿途播洒美丽的种子，收获灿烂的风景。</p>
+            
+            <p>无论是阳光明媚的日子，还是风霜雪雨的时候，只要我们保持对生活的渴望与好奇心，就能在旅途中找到属于自己的幸福与快乐。正如旅行中的每一步都值得珍惜，人生的每一刻也值得我们用心去体验和感悟。</p>
+            
+            <p>时间如流水般从指缝间溜走，无法抓住，更无法驾驭。因此，我们更要珍惜当下，无论是青春年少，还是岁月已老，都要把生活读成诗，唱成歌，活出自己的精彩。</p>
+            
+            <p>本书铅印前，已传部分读者预览。读后感选登在"读者心声"里。</p>
+        </div>
+    </div>
+
+    <div class="navigation">
+        <a href="preface.html" class="nav-btn">返回序言</a>
+        <a href="xu.html" class="nav-btn">阅读序</a>
+    </div>
+</body>
+</html>

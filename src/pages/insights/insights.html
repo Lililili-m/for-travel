@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>人生感悟 - 人在旅途</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background: linear-gradient(135deg, #E9B2AF 0%, #FAECEB 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        .header {
+            text-align: center;
+        }
+
+        .back-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: rgba(255,255,255,0.8);
+            border: none;
+            padding: 12px;
+            margin: 0;
+            border-radius: 25px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            z-index: 1000;
+        }
+
+        .back-icon {
+            width: 24px;
+            height: 24px;
+            stroke: #666;
+            transition: all 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background: rgba(255,255,255,1);
+            transform: translateY(-2px);
+        }
+
+        .back-btn:hover .back-icon {
+            stroke: #333;
+            transform: translateX(-2px);
+        }
+
+        .title {
+            font-size: 2.8rem;
+            color: #FAECEB;
+            margin-bottom: 0.5rem;
+            font-weight: 400;
+        }
+
+        .subtitle {
+            color: #FAECEB;
+            font-size: 1.3rem;
+        }
+
+        .chapters-container {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .navigation {
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .nav-btn {
+            background: #E9B2AF;
+            color: white;
+            border: none;
+            padding: 15px 35px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            text-decoration: none;
+            display: inline-block;
+            margin: 0 10px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-btn:hover {
+            background: #D9A2AF;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 480px) {
+            .title {
+                font-size: 2.5rem;
+            }
+            
+            .nav-btn {
+                display: block;
+                margin: 10px auto;
+                width: 220px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="../catalog.html" class="back-btn">
+        <img src="../../assets/ic_arrow_left_bt.svg" alt="返回" class="back-icon">
+    </a>
+
+    <div class="header">
+        <h1 class="title">人生感悟</h1>
+        <p class="subtitle">世界是自己的</p>
+    </div>
+
+    <div class="chapters-container">
+        <chapter-preview 
+            title="特别的生日礼物" 
+            preview="今天，是我68岁的生日。在这个特别的日子里，我收到了一份来自李凯和彭睿的珍贵礼物——"光彩年华"生日报纸。这是一张发行于1957年9月12日的《光明日报》，泛黄的纸页上印刻着那个年代的历史痕迹。礼物袋里还附有那个年代的一些老照片和一支上上签。这份意达深远的生日礼物仿佛将我带回了那个遥远的年代。"
+            href="shengri.html"
+            color="#E9B2AF">
+        </chapter-preview>
+        
+        <chapter-preview 
+            title="问候68岁的自己" 
+            preview="嘿！68岁的自己，你现在还好吗？时间过的真快，转眼间走过了68个春秋。回望过去，你一定经历了许多起伏和变化吧？那些年轻时的梦想，激情和困惑，现在回想起来，是不是觉得有些遥远，却又仿佛在昨天？68岁的你，退休后有了更多的时间去享受生活。"
+            href="wennian.html"
+            color="#E9B2AF">
+        </chapter-preview>
+        
+        <chapter-preview 
+            title="候鸟南飞是故乡" 
+            preview="我的故乡在南方，我的家乡在北方，南沙是暖冬的驿站，我像一只候鸟，在三地自由的翱翔，享受着北方的浪漫，沐浴在珠江的温暖，却无法阻挡我对故乡的眷恋和向往。我时常向着远方遥望，遥望着故乡的方向，从异乡到故乡，从南方到北方。"
+            href="houniao.html"
+            color="#E9B2AF">
+        </chapter-preview>
+        
+        <chapter-preview 
+            title="时光的河流" 
+            preview="我在广州南沙的家位于珠江入海口。我常在黄昏时分独坐江畔，看夕阳将流水染成金色。江水从不停歇，就像时光从远古流来，向永恒流去。我喜欢看夕阳，因为我的人生岁月与夕阳同辉。江面上渔船穿梭，江边处漂浮着落叶，有的打着旋儿，有的顺流而下，它们多像我们的人生。"
+            href="shiguang.html"
+            color="#E9B2AF">
+        </chapter-preview>
+        
+        <chapter-preview 
+            title="岁月如歌，人生璀璨" 
+            preview="人生如一场漫长的旅途，走过万水千山，历经花开花谢、潮起潮落，不经意间，我们已悄然步入暮年。回眸过往，岁月的行囊里装满了回忆与念想，那些曾经的欢笑、泪水、得失与感悟，都在时光的洗礼中沉淀为生命的底色。在这段旅程中，我们逐渐明白，人生最珍贵的财富并非外在的名利与光环。"
+            href="suiyue.html"
+            color="#E9B2AF">
+        </chapter-preview>
+    </div>
+
+    <div class="navigation">
+        <a href="catalog.html" class="nav-btn">返回目录</a>
+        <a href="voices.html" class="nav-btn">下一章：读者心声</a>
+    </div>
+
+    <script src="../../components/chapter-preview.js"></script>
+</body>
+</html>
