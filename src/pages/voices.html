@@ -93,25 +93,67 @@
             margin-bottom: 20px;
             border-left: 4px solid #D97974;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .voice-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .voice-item.expanded {
+            background: rgba(255,255,255,0.95);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .voice-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
         }
 
         .voice-author {
             font-weight: 600;
             color: #D97974;
-            margin-bottom: 10px;
             font-size: 1.1rem;
+        }
+
+        .voice-date {
+            font-size: 1rem;
+            color: #999;
+        }
+
+        .voice-preview {
+            line-height: 1.6;
+            color: #555;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
         }
 
         .voice-content {
             line-height: 1.6;
             color: #555;
             font-size: 1.2rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
         }
 
-        .voice-date {
-            font-size: 1rem;
-            color: #999;
-            margin-top: 10px;
+        .voice-content.expanded {
+            max-height: 2000px;
+        }
+
+        .expand-icon {
+            width: 20px;
+            height: 20px;
+            stroke: #D97974;
+            transition: transform 0.3s ease;
+        }
+
+        .expand-icon.expanded {
+            transform: rotate(180deg);
         }
 
         .share-section {
@@ -209,29 +251,63 @@
 
     <div>
         <div class="voices-section">
-            <div class="voice-item">
-                <div class="voice-author">@李凯</div>
-                <div class="voice-content">父亲的《人在旅途》，是一本承载着他一生故事的书，当我翻开它，就像打开了一扇通往他内心世界的大门，那些过往的岁月、经历的点滴，如潮水般向我涌来。书中，父亲从求学生涯讲起，他出生在耒阳县的小山村，童年是在田野与星空下度过的。那时的他，在艰苦的环境中依然怀揣着对知识的渴望。从石壕小学到芭蕉中学，再到耒阳三中，他凭借自己的努力和才华，一步步成长。让我印象深刻的是他描述在简陋教室里认真听讲，想象外面世界的场景，那是他梦想起航的地方。</div>
-                <div class="voice-date">2024年3月</div>
+            <div class="voice-item" onclick="toggleVoice(this)">
+                <div class="voice-header">
+                    <div class="voice-author">@李凯</div>
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <div class="voice-date">2024年3月</div>
+                        <svg class="expand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6,9 12,15 18,9"></polyline>
+                        </svg>
+                    </div>
+                </div>
+                <div class="voice-preview">
+                    <strong>父爱如山，旅途如歌</strong><br><br>
+                    父亲的《人在旅途》，是一本承载着他一生故事的书，当我翻开它，就像打开了一扇通往他内心世界的大门，那些过往的岁月、经历的点滴，如潮水般向我涌来...
+                </div>
+                <div class="voice-content">
+                    书中，父亲从求学生涯讲起，他出生在耒阳县的小山村，童年是在田野与星空下度过的。那时的他，在艰苦的环境中依然怀揣着对知识的渴望。从石壕小学到芭蕉中学，再到耒阳三中，他凭借自己的努力和才华，一步步成长。让我印象深刻的是他描述在简陋教室里认真听讲，想象外面世界的场景，那是他梦想起航的地方。后来，他高中毕业后回乡，赶上毛主席逝世，他写的悼念文章被广播站广播，这一经历展现了他的文学才华和对伟人的敬重。紧接着，他在遥田水电站工作，又抓住高考恢复的机会，努力备考，最终考上湖南农机化学校。这段经历让我看到了父亲的勤奋与坚韧，在那个充满机遇和挑战的时代，他没有被困难打倒，而是勇敢地追求自己的梦想。<br><br>在职场中，父亲同样展现出了令人敬佩的品质。他在耒阳市机械厂工作了二十五年，从车间检验员到生产科长，再到厂长，他始终以企业为家，用实际行动诠释着敬业精神和家国情怀。他对产品质量的严格把控，对企业发展的不懈努力，以及在国企改制中为职工争取利益的担当，都让我深受触动。后来，他下岗后又应聘到耒阳市蔡伦现代农业科技园，在新的领域里，他依然能迅速适应，将标准化管理引入农业园区，助力园区发展。他用自己的经历告诉我，无论身处何种境地，都要积极面对生活，不断寻找自己的价值。<br><br>书中关于家庭的部分，也让我感慨万千。父亲讲述了我的出生故事，在我成长过程中，他对我的教育和陪伴细致入微。记得我报考湖南师大附中奥赛班时，考试当天住宿困难，我们住在潮湿的人防洞，他为了让我安心睡觉，手持蒲扇驱赶蚊子，一夜未眠。这份深沉的父爱，我一直铭记在心。还有他和母亲对我的期望和支持，让我能够在学业上不断进步，最终考上北京大学。这些点滴的回忆，让我更加珍惜家人之间的情感。<br><br>除了个人经历，父亲在书中还分享了他的旅行见闻和人生感悟。他去过许多地方，从慕田峪长城到北京四合院，从南岳衡山到国外的阿尔卑斯山、日内瓦等。每一次旅行，他都用心去感受当地的风土人情，用文字记录下那些美好的瞬间。他对人生的感悟深刻而又朴实，他说"世界是自己的，与他人毫无关系"，让我明白要学会在生活中寻找内心的淡定与从容，珍惜当下的每一刻。<br><br>读完这本书，我对父亲有了更深的了解和敬意。他的一生，是奋斗的一生，是充满爱与责任的一生。他用自己的经历，为我树立了榜样，让我明白在人生的旅途中，会遇到各种困难和挑战，但只要保持积极乐观的心态，坚持不懈地努力，就一定能够实现自己的梦想。同时，也要珍惜身边的人，珍惜那些美好的回忆，因为这些才是人生中最宝贵的财富。<br><br>我会将这本书珍藏起来，在未来的日子里，当我遇到困难时，翻开它，从父亲的经历中汲取力量。我也希望自己能够像父亲一样，在人生的道路上，走出属于自己的精彩篇章。
+                </div>
             </div>
 
-            <div class="voice-item">
-                <div class="voice-author">@彭睿</div>
-                <div class="voice-content">读爸的《人在旅途》，我仿佛跟着他走过了漫长岁月，看到了一个普通人在时代浪潮里的拼搏与坚守，心中满是感慨。书中，爸年少时在艰苦环境里仍刻苦求学，高考改变命运的经历让我动容。他在水电站工作时抓住机会提升自己，面对生活的挑战从不退缩。在工作岗位上，不管是在机械厂还是农业园，他都全力以赴，将敬业精神展现得淋漓尽致。他的这种坚韧和努力，让我明白了生活不会辜负每一个奋斗的人。</div>
-                <div class="voice-date">2024年3月</div>
+            <div class="voice-item" onclick="toggleVoice(this)">
+                <div class="voice-header">
+                    <div class="voice-author">@彭睿</div>
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <div class="voice-date">2024年3月</div>
+                        <svg class="expand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6,9 12,15 18,9"></polyline>
+                        </svg>
+                    </div>
+                </div>
+                <div class="voice-preview">
+                    <strong>在岁月长河中感悟奋斗与爱</strong><br><br>
+                    读爸的《人在旅途》，我仿佛跟着他走过了漫长岁月，看到了一个普通人在时代浪潮里的拼搏与坚守，心中满是感慨...
+                </div>
+                <div class="voice-content">
+                    书中，爸年少时在艰苦环境里仍刻苦求学，高考改变命运的经历让我动容。他在水电站工作时抓住机会提升自己，面对生活的挑战从不退缩。在工作岗位上，不管是在机械厂还是农业园，他都全力以赴，将敬业精神展现得淋漓尽致。他的这种坚韧和努力，让我明白了生活不会辜负每一个奋斗的人。<br><br>在家庭生活的描述里，我看到了爸妈相濡以沫的感情，也看到了他们对孩子无微不至的爱。尤其是对李凯的培养，从学习上的引导到生活中的陪伴，每一个细节都饱含深情。<br><br>从旅行见闻和人生感悟部分，能看出爸对生活的热爱。他用心感受世界，无论是壮丽的自然景观，还是充满历史底蕴的人文古迹，都能引发他深刻的思考。他对人生的豁达态度，让我懂得要珍惜当下，保持内心的平静。<br><br>这本书不仅是他的个人的回忆录，更是一本生活的教科书——让我更了解李凯的成长环境，也让我对未来的生活有了更多思考。我会带着从书中领悟到的道理，和李凯一起经营好我们的生活，传承这份对生活的热爱和对家庭的责任。
+                </div>
             </div>
 
-            <div class="voice-item">
-                <div class="voice-author">@蓝天祥云</div>
-                <div class="voice-content">读您的《人在旅途》，我深受触动，心中感慨万千。您用文字描绘的不仅是旅途中的风景，更是一种人生的态度与境界。您的经历让我明白，一个人出生在哪里并不重要，重要的是他是否怀揣理想与信念，是否愿意通过自己的努力与拼搏，走出属于自己的天地。您做到了，并且做得如此出色，这让我由衷为您点赞！</div>
-                <div class="voice-date">2024年3月</div>
+            <div class="voice-item" onclick="toggleVoice(this)">
+                <div class="voice-header">
+                    <div class="voice-author">@蓝天祥云</div>
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <div class="voice-date">2024年3月</div>
+                        <svg class="expand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6,9 12,15 18,9"></polyline>
+                        </svg>
+                    </div>
+                </div>
+                <div class="voice-preview">
+                    <strong>《人在旅途》带来的感动与共鸣</strong><br><br>
+                    读您的《人在旅途》，我深受触动，心中感慨万千。您用文字描绘的不仅是旅途中的风景，更是一种人生的态度与境界...
+                </div>
+                <div class="voice-content">
+                    您的经历让我明白，一个人出生在哪里并不重要，重要的是他是否怀揣理想与信念，是否愿意通过自己的努力与拼搏，走出属于自己的天地。您做到了，并且做得如此出色，这让我由衷为您点赞！<br><br>您今年六十八岁，正是人生中夕阳高照、游山玩水的黄金时节。您走南闯北，像候鸟一样南来北往，足迹遍布祖国的名山大川。您见过北国的白雪皑皑，也沐浴过天涯海角的冬日暖阳；您漂洋过海，到过许多发达国家，甚至阿尔卑斯山脉也曾张开怀抱迎接您这位旅游达人。世界如此广阔，而您依然怀揣着一颗探索的心，未来的日子里，我相信您会继续携夫人一起游历祖国山河，览尽世界奇观，真正做到"不枉世间潇洒走一回"。<br><br>从您的文字中，我感受到您是一位深爱祖国、心系家乡的人。您既有家国情怀，关注国家的繁荣昌盛，又始终牵挂着故乡的亲人朋友。这种情怀让我深深感动，也让我从您身上看到了满满的正能量。您不仅是一位旅行者，更是一位传递温暖与力量的使者。<br><br>您的才华与智慧让我钦佩不已。您凭借自己的聪明才智，从容应对世间的纷繁复杂，活得风生水起。无论遇到什么困难，您都能沉着冷静、处变不惊，这种境界让我深感敬佩。您不仅是我的良师，更是我人生路上的益友。<br><br>您的写作水平更是令人叹服。《人在旅途》文采飞扬，妙语连珠，字里行间透露出您对生活的独特见解与深刻感悟。您用文字将平凡的生活描绘得诗意盎然，让人读来如沐春风。您的学识与才华让人羡慕，更值得赞美！<br><br>最后，衷心祝愿您在未来的旅途中，继续书写精彩的人生篇章，愿您与夫人健康快乐，游遍天下美景，享受生活的每一份美好！
+                </div>
             </div>
 
-            <div class="voice-item">
-                <div class="voice-author">@岁月如歌</div>
-                <div class="voice-content">从您的文字中，我感受到您是一位深爱祖国、心系家乡的人。您既有家国情怀，关注国家的繁荣昌盛，又始终牵挂着故乡的亲人朋友。这种情怀让我深深感动，也让我从您身上看到了满满的正能量。您不仅是一位旅行者，更是一位传递温暖与力量的使者。您的才华与智慧让我钦佩不已。您凭借自己的聪明才智，从容应对世间的纷繁复杂，活得风生水起。</div>
-                <div class="voice-date">2024年3月</div>
-            </div>
 
         </div>
         
@@ -240,5 +316,49 @@
             <a href="youth.html" class="nav-btn">重新开始阅读</a>
         </div>
     </div>
+
+    <script>
+        function toggleVoice(clickedItem) {
+            // 获取所有voice-item元素
+            const allVoiceItems = document.querySelectorAll('.voice-item');
+            
+            // 检查点击的卡片是否已展开
+            const isClickedExpanded = clickedItem.classList.contains('expanded');
+            
+            if (isClickedExpanded) {
+                // 如果点击的是已展开的卡片，直接收起
+                clickedItem.classList.remove('expanded');
+                clickedItem.querySelector('.voice-content').classList.remove('expanded');
+                clickedItem.querySelector('.expand-icon').classList.remove('expanded');
+            } else {
+                // 如果点击的是未展开的卡片
+                // 先收起所有已展开的卡片
+                allVoiceItems.forEach(item => {
+                    item.classList.remove('expanded');
+                    item.querySelector('.voice-content').classList.remove('expanded');
+                    item.querySelector('.expand-icon').classList.remove('expanded');
+                });
+                
+                // 延时200ms后展开新卡片
+                setTimeout(() => {
+                    clickedItem.classList.add('expanded');
+                    clickedItem.querySelector('.voice-content').classList.add('expanded');
+                    clickedItem.querySelector('.expand-icon').classList.add('expanded');
+                    
+                    // 滚动到该卡片位置
+                    setTimeout(() => {
+                        const rect = clickedItem.getBoundingClientRect();
+                        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                        const targetPosition = rect.top + scrollTop - 20;
+                        
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }, 300);
+                }, 200);
+            }
+        }
+    </script>
 </body>
 </html>
