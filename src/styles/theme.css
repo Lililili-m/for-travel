@@ -1,0 +1,73 @@
+/* 主题色彩变量系统 */
+
+/* 默认主题 - 温暖粉色系 */
+:root {
+    --primary-color: #E9B2AF;
+    --primary-hover: #D9A2AF;
+    --background-gradient: linear-gradient(135deg, #E9B2AF 0%, #FAECEB 100%);
+    --title-color: #E9B2AF;
+    --title-border: #E9B2AF;
+}
+
+/* 蓝色主题 */
+.theme-blue {
+    --primary-color: #4A90E2;
+    --primary-hover: #357ABD;
+    --background-gradient: linear-gradient(135deg, #4A90E2 0%, #E3F2FD 100%);
+    --title-color: #4A90E2;
+    --title-border: #4A90E2;
+}
+
+/* 绿色主题 */
+.theme-green {
+    --primary-color: #7CB342;
+    --primary-hover: #689F38;
+    --background-gradient: linear-gradient(135deg, #7CB342 0%, #F1F8E9 100%);
+    --title-color: #7CB342;
+    --title-border: #7CB342;
+}
+
+/* 紫色主题 */
+.theme-purple {
+    --primary-color: #9C27B0;
+    --primary-hover: #7B1FA2;
+    --background-gradient: linear-gradient(135deg, #9C27B0 0%, #F3E5F5 100%);
+    --title-color: #9C27B0;
+    --title-border: #9C27B0;
+}
+
+/* 橙色主题 */
+.theme-orange {
+    --primary-color: #FF9800;
+    --primary-hover: #F57C00;
+    --background-gradient: linear-gradient(135deg, #FF9800 0%, #FFF3E0 100%);
+    --title-color: #FF9800;
+    --title-border: #FF9800;
+}
+
+/* 悠然岁月主题 */
+.theme-serenity {
+    --primary-color: #E49F9C;
+    --primary-hover: #D48F8C;
+    --background-gradient: linear-gradient(135deg, #E49F9C 0%, #FAECEB 100%);
+    --title-color: #E49F9C;
+    --title-border: #E49F9C;
+}
+
+/* 应用主题变量 */
+body {
+    background: var(--background-gradient);
+}
+
+.article h2 {
+    color: var(--title-color);
+    border-bottom: 2px solid var(--title-border);
+}
+
+.nav-btn {
+    background: var(--primary-color);
+}
+
+.nav-btn:hover {
+    background: var(--primary-hover);
+}

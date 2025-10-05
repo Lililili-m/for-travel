@@ -1,73 +1,229 @@
-# 章节预览组件使用说明
+# 文章组件系统
 
-## 组件概述
+这是一个用于快速创建统一风格文章页面的组件系统，基于原有的 `shengri.html` 文件抽离而来。
 
-`chapter-preview` 是一个可复用的自定义 Web 组件，用于显示章节标题和内容预览，支持点击跳转到详情页面。
+## 文件结构
 
-## 使用方法
-
-### 1. 引入组件脚本
-
-在 HTML 页面中引入组件脚本：
-
-```html
-<script src="../../components/chapter-preview.js"></script>
+```
+src/
+├── styles/
+│   ├── common.css          # 公共基础样式
+│   └── theme.css           # 主题色彩变量
+├── components/
+│   ├── article-template.js # 文章模板组件
+│   ├── article-generator.js # 文章生成器
+│   ├── example-usage.js    # 使用示例
+│   └── README.md          # 说明文档
+└── pages/
+    └── insights/
+        └── shengri.html    # 重构后的示例页面
 ```
 
-### 2. 使用组件
+## 核心组件
 
-在 HTML 中使用组件：
+### 1. ArticleTemplate 类
 
-```html
-<chapter-preview 
-    title="章节标题" 
-    preview="章节内容预览文本，超过两行会自动省略显示..."
-    href="detail-page.html">
-</chapter-preview>
+文章模板的核心类，负责生成HTML内容。
+
+**基本用法：**
+```javascript
+const ArticleTemplate = require('./article-template.js');
+
+const template = new ArticleTemplate({
+    title: '文章标题',
+    theme: 'default', // 主题：default, blue, green, purple, orange
+    articleTitle: '文章标题',
+    content: [
+        '第一段内容',
+        '第二段内容'
+    ],
+    navigation: {
+        show: true,
+        buttons: [
+            { text: '返回列表', url: '../insights.html' },
+            { text: '下一篇', url: 'next.html' }
+        ]
+    }
+});
+
+// 生成HTML
+const html = template.generateHTML();
+
+// 保存到文件
+template.saveToFile('./my-article.html');
 ```
 
-### 3. 组件属性
+### 2. ArticleGenerator 类
 
-| 属性名 | 类型 | 必需 | 说明 |
-|--------|------|------|------|
-| `title` | String | 是 | 章节标题 |
-| `preview` | String | 是 | 内容预览文本 |
-| `href` | String | 否 | 点击跳转的链接地址 |
-| `color` | String | 否 | 主题颜色（默认：#D97974） |
+提供链式API的文章生成器，使用更加便捷。
 
-### 4. 样式特性
+**基本用法：**
+```javascript
+const { ArticleGenerator } = require('./article-generator.js');
 
-- 响应式设计，支持移动端适配
-- 悬停效果：卡片上浮、边框高亮
-- 内容预览自动省略：超过两行显示省略号
-- 标题左对齐，无横条装饰
-- 组件间距：2rem
-- 支持自定义主题颜色
-- 与现有页面风格保持一致
-
-### 5. 示例
-
-```html
-<div class="chapters-container">
-    <chapter-preview 
-        title="序" 
-        preview="忘记从哪天起，开始帮伯伯编辑他的故事。以前，伯伯在我心中，就是一位遥远而又亲近的长辈..."
-        href="xu.html"
-        color="#D97974">
-    </chapter-preview>
-    
-    <chapter-preview 
-        title="前言" 
-        preview="人生就是一场漫长的旅行，充满了未知与挑战，但也充满了美好与希望..."
-        href="qianyan.html"
-        color="#D97974">
-    </chapter-preview>
-</div>
+new ArticleGenerator()
+    .createArticle({
+        title: '我的文章',
+        content: ['文章内容']
+    })
+    .setTheme('blue')
+    .setTitle('新标题')
+    .save('./my-article.html');
 ```
+
+### 3. ArticleUtils 工具类
+
+提供预设模板和快速创建方法。
+
+**预设模板：**
+- `insights` - 人生感悟类（默认主题）
+- `youth` - 青春回忆类（蓝色主题）
+- `serenity` - 宁静时光类（绿色主题）
+- `preface` - 前言序言类（紫色主题）
+
+**快速创建：**
+```javascript
+const { ArticleUtils } = require('./article-generator.js');
+
+// 使用预设模板
+ArticleUtils.createByType('insights', '文章标题', ['内容'])
+    .save('./article.html');
+
+// 批量创建
+ArticleUtils.createBatch([
+    { type: 'insights', title: '文章1', content: ['内容1'] },
+    { type: 'youth', title: '文章2', content: ['内容2'] }
+]);
+```
+
+## 主题系统
+
+### 可用主题
+
+1. **default** - 温暖粉色系（原 shengri.html 风格）
+2. **blue** - 蓝色系
+3. **green** - 绿色系
+4. **purple** - 紫色系
+5. **orange** - 橙色系
+
+### 自定义主题
+
+可以通过添加CSS变量来自定义主题：
+
+```css
+.theme-custom {
+    --primary-color: #your-color;
+    --primary-hover: #your-hover-color;
+    --background-gradient: linear-gradient(135deg, #color1, #color2);
+    --title-color: #your-title-color;
+    --title-border: #your-border-color;
+}
+```
+
+## 配置参数
+
+### ArticleTemplate 配置
+
+| 参数 | 类型 | 默认值 | 说明 |
+|------|------|--------|------|
+| title | String | '文章标题' | 页面标题 |
+| theme | String | 'default' | 主题名称 |
+| backUrl | String | '../insights.html' | 返回链接 |
+| backIcon | String | '../../assets/ic_arrow_left_bt.svg' | 返回图标 |
+| articleTitle | String | '文章标题' | 文章标题 |
+| content | Array/String | [] | 文章内容 |
+| navigation | Object | { show: true, buttons: [] } | 导航配置 |
+| customStyles | String | '' | 自定义CSS |
+
+### 导航配置
+
+```javascript
+navigation: {
+    show: true, // 是否显示导航
+    buttons: [
+        { text: '按钮文字', url: '链接地址' }
+    ]
+}
+```
+
+## 使用示例
+
+### 1. 创建简单文章
+
+```javascript
+const { ArticleGenerator } = require('./article-generator.js');
+
+new ArticleGenerator()
+    .createArticle({
+        title: '简单文章',
+        content: ['这是文章内容。']
+    })
+    .save('./simple-article.html');
+```
+
+### 2. 使用预设模板
+
+```javascript
+const { ArticleUtils } = require('./article-generator.js');
+
+ArticleUtils.createByType('youth', '青春回忆', [
+    '这是青春回忆的内容。',
+    '可以有多段内容。'
+]).save('./youth-article.html');
+```
+
+### 3. 自定义主题
+
+```javascript
+new ArticleGenerator()
+    .createArticle({
+        title: '自定义主题文章',
+        content: ['内容'],
+        customStyles: `
+            .article h2 {
+                color: #ff6b6b;
+                text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            }
+        `
+    })
+    .save('./custom-article.html');
+```
+
+### 4. 批量创建
+
+```javascript
+const articles = [
+    { type: 'insights', title: '感悟1', content: ['内容1'] },
+    { type: 'youth', title: '青春1', content: ['内容2'] },
+    { type: 'serenity', title: '宁静1', content: ['内容3'] }
+];
+
+ArticleUtils.createBatch(articles).forEach((generator, index) => {
+    generator.save(`./article-${index + 1}.html`);
+});
+```
+
+## 运行示例
+
+```bash
+# 在 components 目录下运行
+node example-usage.js
+```
+
+这将创建多个示例文章文件，展示不同的使用方式。
+
+## 优势
+
+1. **代码复用** - 避免重复的HTML和CSS代码
+2. **主题统一** - 所有文章保持一致的视觉风格
+3. **快速开发** - 通过配置快速生成文章页面
+4. **易于维护** - 样式和结构集中管理
+5. **灵活扩展** - 支持自定义主题和样式
+6. **批量处理** - 支持批量创建文章
 
 ## 注意事项
 
-1. 确保组件脚本路径正确
-2. 预览文本建议控制在合理长度，避免过长影响显示效果
-3. 组件会自动处理点击跳转，无需额外 JavaScript 代码
-4. 组件使用 Shadow DOM，样式隔离，不会影响页面其他元素
+1. 确保样式文件路径正确
+2. 图片资源路径需要根据实际位置调整
+3. 自定义样式会覆盖默认样式
+4. 内容数组会自动转换为段落标签
